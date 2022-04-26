@@ -1,0 +1,115 @@
+<html>
+<head>
+  <div class="tab">
+  <button class="tablinks" style="height:40px; width:120px; font-family:Arial; font-weight:bold" onclick="location.href='/'"> Back </button>  
+</div>
+<style>
+table, th, td {
+  border:1px solid black;
+  color: black;
+  font-size: 25px;
+  font-family : Arial;
+}
+body {
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AnchorDash</title>
+    <link crossorigin="anonymous"
+          integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4="
+          rel="stylesheet"/>
+    <script>
+    function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 50000);
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById("currentTime").value = time;
+</script>
+</head>
+<body>
+
+<h2 style="font-size: 30px; font-weight:bold; font-family: Arial;"> Anchor Statistics </h2>
+
+<table style="width:100%">
+  <tr>
+    <th> Data Column 1</th>
+    <th> Data Column 2 </th>
+    <th> Data Column 3 </th>
+  <tr>
+    <td >ANC Price (UST) - {{ ANC_Price_UST }}</th>
+    <td>ANC Buyback (72HR)(UST) - {{ ANC_Buyback_72HR_UST }}</th>
+    <td>ANC Buyback (12 Month) (UST) - {{ ANC_Buyback_12Month_UST}}</th>
+  </tr>
+  <tr>
+    <td> Deposit APY - {{ Deposit_APY }}</td>
+    <td>Total Borrow - {{ Total_Borrow }}</td>
+    <td>Borrow APR - {{Borrow_APR}}</td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table style="width:100%;">
+  <tr>
+    <th> Price </th>
+    <th> Collateral </th>
+    <th> Total Collateral Value </th>
+    <th> Ratio </th>
+  </tr>
+  <tr>
+    <td>Bonded Luna Price - {{ Bonded_Luna_Price }} </td>
+    <td> Bonded Luna Collateral - {{ Bonded_Luna_Collateral }} </td>
+    <td> Bonded Luna Total Collateral Value - {{ Bonded_Luna_Total_Collateral_Value }} </td>
+    <td> Ratio - {{Ratio_Luna}}
+  </tr>
+  <tr>
+    <td> Bonded Ether Price - {{ Bonded_Ether_Price }} </td>
+    <td>Bonded Ether Collateral - {{Bonded_Ether_Collateral}} </td>
+    <td>  Bonded Ether Total Collateral Value - {{ Bonded_Ether_Total_Collateral_Value}} </td>
+    <td> Ratio - {{Ratio_Ether}} </td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table style="width:100%;">
+  <tr>
+    <th> Coin Pair Name </th>
+    <th> Value </th>
+  </tr>
+  <tr>
+  <td> Current USDT/DAI </td>
+  <td> {{USDTDAI_value}} </td>
+</tr>
+<tr>
+  <td> Current LUNA/USDT </td>
+  <td> {{LUNAUSDT_value}} </td>
+</tr>
+<tr> 
+  <td> Current ETH/USDT </td>
+  <td> {{ETHUSDT_value}} </td>
+</tr>
+<tr> 
+  <td> Current BETH/ETH </td>
+  <td> {{ BETHETH_value}} </td>
+</tr>
+</table>
+
+
+</body>
+</html>
+

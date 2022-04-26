@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            font-family: "Open Sans"; 
+        }
+        p {
+            font-family : "Arial";
+            font-size : "150%";
+        }
+
+
+        h {
+            font-family : "Times New Roman";
+            font-weight : "300%";
+        }
+        .container {
+            postion: "relative"
+        }
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AnchorDash</title>
+    <link crossorigin="anonymous"
+          integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4="
+          rel="stylesheet"/>
+    <img src="https://assets-global.website-files.com/61a0a50381fdccb6c37927e5/61e800a5df32732b07d77bc1_Hex-Trust-Logo.svg" position="absolute" top="0" right="5px" width="300" height="70" align = "right"/>
+    <img src = "https://app.anchorprotocol.com/assets/LogoTerra.114ab559.svg" width="300"
+    height="90" position="absolute" top="0" left="100px" align = "left">
+    <script>
+    function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 50000);
+</script>
+
+    <h1 style='text-align: center; font-size: 60px;'> Anchor Dash</h1>
+</head>
+<div class="tab">
+  <button class="tablinks" onclick="">London</button>
+  
+</div>
+    <h2 style="font-family : Times New Roman;" > Information from Dashboard</h2>
+<body>
+    <h3> <strong> Anchor Statistics </strong> </h3>
+    <p> Total Value Locked (UST) - {{ Total_Value_locked }}</p>
+    <p> Total Yield Reserve(UST) - {{ Total_Yield_reserve }}</p>
+    <p> Total Collateral - {{ Total_Collateral }}</p>
+    <p> Total Deposit - {{ Total_Deposit }}</p>
+    <h3> <strong> ANC coin Statistics </strong> </h3>
+    <p> ANC Price (UST) - {{ ANC_Price_UST }} </p>
+    <p> ANC Buyback (72HR)(UST) - {{ ANC_Buyback_72HR_UST }} </p>
+    <p> ANC Buyback (12 Month) (UST) - {{ ANC_Buyback_12Month_UST}} </p>
+    <h3> <strong> Deposit Statistics </strong> </h3>
+    <p> Deposit APY - {{ Deposit_APY }}</p>
+    <p> Total Borrow - {{ Total_Borrow }}</p>
+    <p> Borrow APR - {{Borrow_APR}} </p>
+    <h3> <strong> Bonded Assets Statistics </strong> </h3>
+    <p> Bonded Luna Price - {{ Bonded_Luna_Price }}
+    <p> Bonded Luna Collateral - {{ Bonded_Luna_Collateral }} </p>
+    <p> Bonded Luna Total Collateral Value - {{ Bonded_Luna_Total_Collateral_Value }} </p>
+    <p> Bonded Ether Price - {{ Bonded_Ether_Price }} </p>
+    <p>Bonded Ether Collateral - {{Bonded_Ether_Collateral}} </p>
+    <p> Bonded Ether Total Collateral Value - {{ Bonded_Ether_Total_Collateral_Value}} </p>
+    <h3> <strong> Coin-Pair Statistics [Binance + Kraken]</strong> </h3>
+    <p> Current USDT/DAI  - {{USDTDAI_value}} </p>
+    <p> Current LUNA/USDT - {{LUNAUSDT_value}} </p>
+    <p> Current ETH/USDT - {{ETHUSDT_value}} </p>
+    <p> Current BETH/ETH - {{ BETHETH_value}} </p>
+
+    {% for key,value in message.items %} 
+        <li> {{key}} : {{value}}</li>
+    {% endfor %}
+</body>
+</html>

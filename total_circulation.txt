@@ -1,0 +1,1 @@
+{"Total_Value_locked": "19,110,487,136", "Total_Yield_reserve": "261,143,274", "Total_Collateral": "6,233,655,013", "Total_Deposit": "12,876,832,122"}

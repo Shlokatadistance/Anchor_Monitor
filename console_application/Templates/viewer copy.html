@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <div class="tab">
+  <button class="tablinks" style="height:40px; width:220px; font-family:Arial; font-weight:bold" onclick="location.href='/next_viewer'"> Anchor Component Statistics </button>
+  
+</div>
+    <style>
+        * {
+            font-family: "Open Sans"; 
+        }
+        p {
+            font-family : "Arial";
+            font-size : "150%";
+        }
+
+
+        h {
+            font-family : "Times New Roman";
+            font-weight : "300%";
+        }
+        .container {
+            postion: "relative";
+        }
+
+        .topleft{
+            position : "absolute";
+            top : "8px";
+            left : "16px";
+            font-size : "150%";
+        }
+        .topright{
+            position : "absolute";
+            top : "80px";
+            right : "160px";
+            font-size : "150%";
+        }
+        .center{
+            position : "absolute";
+            top : "16px";
+            bottom : "16px";
+            right : "16px";
+            left : "16px";
+        }
+        table, th, td {
+            border: 1px solid black;
+            height: 80%;
+            font-size: 35px;
+         }
+         body {
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AnchorDash</title>
+    <link crossorigin="anonymous"
+          integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4="
+          rel="stylesheet"/>
+    <script>
+    function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 50000);
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById("currentTime").value = time;
+</script>
+
+    <h1 style='text-align: center; font-size: 85px;'> Anchor Dash</h1>
+</head>
+
+    <h2 style="font-family : Arial; font-size:27px;" > Information from Dashboard</h2>
+
+    <p id='time' style="font-size: 20px;">Shlok </p>
+        <script>
+         var date = document.lastModified;
+         //document.write("Last Refresh: "+date);
+         document.getElementById('time').innerHTML = "Last Refreshed at: "+date;
+      </script>
+<body>
+    <img src = "{% static "images/graph.png" %}" alt="Not Found" width = "600" height = "600" top="2px" align = "right" >
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table style="width:45%;height:60%">
+        <tr>
+
+        <th> Metric </th>
+        <th> Value </th>
+    </tr>
+    <tr>
+    <td> Total Value Locked (UST) </td>
+    <td> {{ Total_Value_locked }} </td>
+</tr>
+<tr>
+    <td> Total Yield Reserve (UST) </td>
+    <td> {{Total_Yield_reserve }} </td>
+</tr>
+<tr>
+    <td> Total Collateral (Dollars) </td>
+    <td> {{ Total_Collateral }} </td>
+</tr>
+<tr>
+    <td> Total Deposit (Dollars) </td>
+    <td> {{ Total_Deposit }} </td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!-- base.html -->
+<!doctype html>
+<html>
+<head>
+  <style type="text/css">
+    .sidenav {
+      height:100%;
+      width:200px;
+      position: fixed;
+      z-index:1;
+      top:0;
+      left:0;
+      background-color:#111;
+      overflow-x: :hidden;
+      padding-top:20px;
+    }    
+
+                .sidenav a {
+      padding:6px 8px 6px 16px;
+      text-decoration: none;
+      font-size:20px;
+      color: white;
+      display:block;
+    }  
+  
+                .sidenav a:hover{
+      color:#f1f1f1;
+    }     
+
+                .main{
+      margin-left:160px;
+      padding: 0px 10px;
+    }   
+    table, th, td {
+  border:1px solid black;
+  color: black;
+  font-size: 20px;
+}
+    </style>
+ 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+  <title>Anchor_Stats_Page</title>
+</head>
+
+
+    <div align="right" id='timerx' style="font-size: 20px;"><span></span></div>
+        <div align="right" left="-100" id='time' style="font-size: 20px;"><span></span></div>
+
+
+        <script>
+                          function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 50000);
+         var date = document.lastModified;
+         //document.write("Last Refresh: "+date);
+         document.getElementById('time').innerHTML = "Last refresh: "+date;
+
+         function refreshTime() {
+var datetime = new Date();
+console.log(datetime);
+document.getElementById("timerx").textContent = datetime;
+    }
+        setInterval(refreshTime, 1000);
+
+      </script>
+ 
+<body>
+  <div class="sidenav">
+    <a href="/">Anchor Statistics</a>
+    <a href="/next_viewer">Coin Pair Statstics</a>
+            <a href="/"> HT Markets </a>
+        <a href="/https://app.anchorprotocol.com/"> Anchor </a>
+                <a href="/"> Monitor Wallet </a>
+        <a href="/"> Help </a>
+
+  </div>
+ 
+  <div id="content" name="content" class="main">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <h1 class="mt-2">Anchor Statistics</h1>
+        <h2> Coin Pair Statstics</h2>
+        <hr class="mt-0 mb-4">
+<table style="width:115%">
+  <tr>
+    <th> Data Column 1</th>
+    <th> Data Column 2 </th>
+    <th> Data Column 3 </th>
+  <tr>
+    <td >ANC (UST) : {{ ANC_Price_UST }}</th>
+    <td>ANC Buyback (72HR)(UST) : {{ ANC_Buyback_72HR_UST }}</th>
+    <td>ANC Buyback (12 Month) (UST) : {{ ANC_Buyback_12Month_UST}}</th>
+  </tr>
+  <tr>
+    <td> Deposit APY : {{ Deposit_APY }}</td>
+    <td>Total Borrow : {{ Total_Borrow }}</td>
+    <td>Borrow APR : {{Borrow_APR}}</td>
+  </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<table style="width:115%;">
+  <tr>
+    <th> Price </th>
+    <th> Collateral </th>
+    <th> Total Collateral Value </th>
+  </tr>
+  <tr>
+    <td>bLuna Price : {{ Bonded_Luna_Price }} </td>
+    <td> bLuna Collateral : {{ Bonded_Luna_Collateral }} </td>
+    <td> bLuna Collateral(net) :  {{ Bonded_Luna_Total_Collateral_Value }} </td>
+  </tr>
+  <tr>
+    <td> bEther Price : {{ Bonded_Ether_Price }} </td>
+    <td>bEther Collateral : {{Bonded_Ether_Collateral}} </td>
+    <td>  bEther Collateral(net) : {{ Bonded_Ether_Total_Collateral_Value}} </td>
+  </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<table style="width:115%;">
+  <tr>
+    <th> Coin Pair Name </th>
+    <th> Value </th>
+  </tr>
+  <tr>
+  <td> Current USDT/DAI </td>
+  <td> {{USDTDAI_value}} </td>
+</tr>
+<tr>
+  <td> Current LUNA/USDT </td>
+  <td> {{LUNAUSDT_value}} </td>
+</tr>
+<tr> 
+  <td> Current ETH/USDT </td>
+  <td> {{ETHUSDT_value}} </td>
+</tr>
+<tr> 
+  <td> Current BETH/ETH </td>
+  <td> {{ BETHETH_value}} </td>
+</tr>
+</table>
+      </div>
+    </div>
+  </div>
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
